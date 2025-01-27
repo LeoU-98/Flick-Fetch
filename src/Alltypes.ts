@@ -35,5 +35,7 @@ export type MovieDetailsProps = {
 
 export type MovieProps = {
   movie: Show;
-  onSelect: React.Dispatch<React.SetStateAction<string>>;
+};
+export type NavBarProps = {
+  onQueryText: React.Dispatch<React.SetStateAction<string>>;
 };

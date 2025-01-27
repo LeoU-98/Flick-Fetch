@@ -1,5 +1,17 @@
-export async function getShows(queryText: string) {
-  const url = `https://imdb.iamidiotareyoutoo.com/search?q=${queryText}`;
+export async function getShows(queryText: string, queryType: string) {
+  // const url = `https://imdb.iamidiotareyoutoo.com/search?q=${queryText}`;
+  const url = `https://imdb.iamidiotareyoutoo.com/search?${queryType}=${queryText}`;
+  // let url: string;
+
+  if (queryText.length < 3) return;
+
+  // switch (queryType) {
+  //   case "q":
+  //     url = `https://imdb.iamidiotareyoutoo.com/search?q=${queryText}`;
+  //     break;
+  //   case "tt":
+  //     url = `https://imdb.iamidiotareyoutoo.com/search?tt=${queryText}`;
+  // }
 
   try {
     const response = await fetch(url);

@@ -1,5 +1,39 @@
 @import "tailwindcss";
 
+body {
+  background-image: url(./assets/background.jpg);
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+body::before {
+  content: "";
+  background-color: rgba(0, 0, 0, 0.6);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1000;
+}
+/* 
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+
+::-webkit-scrollbar-thumb {
+  background: #062d2c;
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+  background: #145b56;
+} */
+
 @theme {
   --color-shakespeare-50: #f2f9fd;
   --color-shakespeare-100: #e4f1fa;
@@ -24,4 +58,16 @@
   --color-cello-800: #124a7a;
   --color-cello-900: #13395d;
   --color-cello-950: #0e2843;
+
+  --color-genoa-50: #f1fcfa;
+  --color-genoa-100: #cef9f0;
+  --color-genoa-200: #9df2e1;
+  --color-genoa-300: #63e5cf;
+  --color-genoa-400: #33ceb9;
+  --color-genoa-500: #1ab2a0;
+  --color-genoa-600: #128f83;
+  --color-genoa-700: #13726a;
+  --color-genoa-800: #145b56;
+  --color-genoa-900: #154c48;
+  --color-genoa-950: #062d2c;
 }
