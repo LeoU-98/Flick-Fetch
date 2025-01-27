@@ -7,8 +7,7 @@ import { useState } from "react";
 import MovieDetails from "./MovieDetails";
 
 function App() {
-  const queryText = "car";
-
+  const [queryText, setQueryText] = useState("fight club");
   const { data, isLoading, error } = useQuery<QueryData>({
     queryKey: ["movies", queryText],
     queryFn: () => getShows(queryText),
@@ -23,7 +22,7 @@ function App() {
 
   return (
     <div className="p-4">
-      <div className="bg-cello-500 flex items-center justify-between px-2">
+      <div className="bg-cello-500 mb-6 flex items-center justify-between px-2">
         <div className="flex items-center">
           <SVG />
           <h1>Flick Fetch</h1>
@@ -33,11 +32,12 @@ function App() {
             type="text"
             placeholder="search"
             className="rounded-full bg-amber-300 p-2"
+            onChange={(event) => setQueryText(event.target.value)}
           />
         </div>
         <div>13 Result Found </div>
       </div>
-      <main className="container mx-auto flex bg-green-500">
+      <main className="container mx-auto flex gap-4 bg-green-500">
         <div className="basis-1/2 bg-blue-600">
           <MovieList
             data={data}

@@ -1,18 +1,4 @@
-import { MovieListProps, MovieProps, Show } from "./Alltypes";
-
-// const {
-//   "#ACTORS": actor,
-//   "#AKA": aka,
-//   "#IMDB_ID": ID,
-//   "#IMDB_IV": IV,
-//   "#IMDB_URL": URL,
-//   "#IMG_POSTER": poster,
-//   "#RANK": rank,
-//   "#TITLE": title,
-//   "#YEAR": year,
-//   photo_height: h,
-//   photo_width: w,
-// } = show;
+import { MovieListProps, MovieProps } from "./Alltypes";
 
 function MovieList({ data, isLoading, error, onSelect }: MovieListProps) {
   // const { data, isLoading, error } = queryResult;
