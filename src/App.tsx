@@ -1,83 +1,58 @@
-import { motion } from "motion/react";
+import { useQuery } from "@tanstack/react-query";
+import MovieList from "./MovieList";
+import { getShows } from "./utils/fetchData";
+import { QueryData } from "./Alltypes";
+import SVG from "./SVG";
+import { useState } from "react";
+import MovieDetails from "./MovieDetails";
 
 function App() {
-  // const [count, setCount] = useState(0);
+  const queryText = "car";
+
+  const { data, isLoading, error } = useQuery<QueryData>({
+    queryKey: ["movies", queryText],
+    queryFn: () => getShows(queryText),
+  });
+
+  const [selectedMovieID, setSelectedMovieID] = useState("");
+  console.log(data?.description);
+
+  const selectedMovie = data?.description.find(
+    (movie) => movie["#IMDB_ID"] === selectedMovieID,
+  );
 
   return (
     <div className="p-4">
-      <div className="flex justify-between bg-red-600">
-        <div className="flex">
+      <div className="bg-cello-500 flex items-center justify-between px-2">
+        <div className="flex items-center">
           <SVG />
           <h1>Flick Fetch</h1>
         </div>
         <div>
-          <input type="text" />
+          <input
+            type="text"
+            placeholder="search"
+            className="rounded-full bg-amber-300 p-2"
+          />
         </div>
-        <div>Search Result Found</div>
+        <div>13 Result Found </div>
       </div>
-      <main className="container flex bg-green-500">
-        <div className="bg-blue-600">Founded Movies </div>
-        <div className="bg-violet-600">Movie Details and Rating </div>
+      <main className="container mx-auto flex bg-green-500">
+        <div className="basis-1/2 bg-blue-600">
+          <MovieList
+            data={data}
+            isLoading={isLoading}
+            error={error}
+            onSelect={setSelectedMovieID}
+          />
+        </div>
+        <div className="basis-1/2 bg-violet-600">
+          {selectedMovieID ? (
+            <MovieDetails selectedMovie={selectedMovie} />
+          ) : null}
+        </div>
       </main>
     </div>
-  );
-}
-
-const pathVairants = {
-  initial: { pathLength: 0 },
-  animate: {
-    pathLength: 1,
-
-    transition: {
-      duration: 1,
-    },
-  },
-};
-
-function SVG() {
-  return (
-    <motion.svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="96"
-      height="96"
-      fill="none"
-      viewBox="0 0 96 96"
-      id="movie-reel"
-    >
-      <motion.path
-        variants={pathVairants}
-        initial="initial"
-        animate="animate"
-        stroke="#000"
-        stroke-width="5"
-        d="M15 86H81C83.7614 86 86 83.7614 86 81V15C86 12.2386 83.7614 10 81 10H15C12.2386 10 10 12.2386 10 15V81C10 83.7614 12.2386 86 15 86Z"
-      ></motion.path>
-      <motion.path
-        variants={pathVairants}
-        initial="initial"
-        animate="animate"
-        stroke="#000"
-        stroke-width="5"
-        d="M23 86H73V10H23V86Z"
-      ></motion.path>
-      <motion.path
-        variants={pathVairants}
-        initial="initial"
-        animate="animate"
-        stroke="#000"
-        stroke-linecap="round"
-        stroke-width="5"
-        d="M12 24H23M74 24H85M12 36H23M74 36H85M12 48H23M74 48H85M12 60H23M74 60H85M12 72H23M74 72H85"
-      ></motion.path>
-      <motion.path
-        variants={pathVairants}
-        initial="initial"
-        animate="animate"
-        stroke="#000"
-        stroke-width="5"
-        d="M58.7859 45.0119C61.5087 46.5403 61.5087 50.4597 58.7859 51.9881L43.9579 60.3112C41.2915 61.8079 38 59.8808 38 56.8231L38 40.1769C38 37.1192 41.2915 35.1921 43.9579 36.6888L58.7859 45.0119Z"
-      ></motion.path>
-    </motion.svg>
   );
 }
 
