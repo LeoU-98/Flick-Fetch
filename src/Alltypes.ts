@@ -14,6 +14,7 @@ export type Show = {
 
 export type QueryData = {
   description: Show[];
+  short?: object;
 };
 
 export type QueryResult = {

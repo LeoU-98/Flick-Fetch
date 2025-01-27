@@ -20,28 +20,72 @@ function MovieDetails({ selectedMovie }: MovieDetailsProps) {
     return <div>Error: {error.message}</div>;
   }
 
-  console.log(data);
+  console.log(data?.short);
+
+  function getActors(arr: { name: string }[]): string[] {
+    return arr.map((actor) => actor?.name);
+  }
 
   return (
     <div className="bg-genoa-500/50 h-[650px] rounded-4xl p-5 text-white">
       <div className="mb-10 flex w-full justify-between">
-        <div className="flex flex-col gap-8 pt-20 pl-8">
+        <div className="flex flex-col gap-2 pt-20 pl-8">
           <p className="text-2xl">
-            Title : <span className="text-xl">{selectedMovie?.["#TITLE"]}</span>
+            Title : <span className="text-base">{data?.short?.name}</span>
           </p>
+          <p className="text-2xl">
+            Publish Date :{" "}
+            <span className="text-base">{data?.short?.datePublished}</span>
+          </p>
+          {/* <p className="text-2xl">
+            Author :{" "}
+            <span className="text-base">
+              {data?.short?.review?.author?.name}
+            </span>
+          </p> */}
           <p className="text-2xl">
             Actors :
-            <span className="text-xl">{selectedMovie?.["#ACTORS"]}</span>
+            <span className="text-base">
+              {...getActors(data?.short?.actor)}
+            </span>
           </p>
           <p className="text-2xl">
-            Year : <span className="text-xl">{selectedMovie?.["#YEAR"]}</span>
+            Directors :
+            <span className="text-base">
+              {...getActors(data?.short?.director)}
+            </span>
           </p>
           <p className="text-2xl">
-            Rank : <span className="text-xl">#{selectedMovie?.["#RANK"]}</span>
+            Contect Rating :
+            <span className="text-base">{data?.short?.contentRating}</span>
+          </p>
+          <p className="text-2xl">
+            Genre :<span className="text-base">{...data?.short?.genre}</span>
+          </p>
+          {/* <p className="text-2xl">
+            Language :
+            <span className="text-base">{data?.short?.review?.inLanguage}</span>
+          </p> */}
+          <p className="text-2xl">
+            Descryption :
+            <span className="text-base">{data?.short?.description}</span>
+          </p>
+          {/* <p className="text-2xl">
+            Date Created :
+            <span className="text-base">
+              {data?.short?.review?.dateCreated}
+            </span>
+          </p> */}
+          <p className="text-2xl">
+            Rating :{" "}
+            <span className="text-base">
+              {data?.short?.aggregateRating?.ratingValue}⭐ (
+              {data?.short?.aggregateRating?.ratingCount})
+            </span>
           </p>
         </div>
         <img
-          src={selectedMovie?.["#IMG_POSTER"]}
+          src={data?.short?.image}
           alt={selectedMovie?.["#TITLE"]}
           className="h-[480px] w-80"
         />
