@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import MovieList from "./MovieList";
+import MovieList from "./MovieList/MovieList";
 import { getShows } from "./utils/fetchData";
 import { QueryData } from "./Alltypes";
 import { useState } from "react";

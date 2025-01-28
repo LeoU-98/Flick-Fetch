@@ -1,6 +1,6 @@
 import { Link } from "react-router";
 
-import { MovieProps } from "./Alltypes";
+import { MovieProps } from "../Alltypes";
 
 function Movie({ movie }: MovieProps) {
   const { "#IMG_POSTER": poster, "#TITLE": title, "#YEAR": year } = movie;

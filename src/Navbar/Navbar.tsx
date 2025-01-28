@@ -1,16 +1,16 @@
 import { useRef } from "react";
 import SVG from "./SVG";
-import { NavBarProps } from "./Alltypes";
+import { NavBarProps } from "../Alltypes";
 import { CiSearch } from "react-icons/ci";
+import { useNavigate } from "react-router";
 
 function Navbar({ onQueryText }: NavBarProps) {
   const searchRef = useRef<HTMLInputElement>(null);
+  const navigate = useNavigate();
 
   function searchButtonHandler() {
     onQueryText(searchRef.current?.value || "");
-
-    console.log(searchRef.current?.value);
-    console.log(searchRef.current);
+    navigate("/");
   }
 
   return (

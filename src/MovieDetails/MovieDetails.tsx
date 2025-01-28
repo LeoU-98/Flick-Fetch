@@ -7,11 +7,27 @@ import TrailerBox from "./TrailerBox";
 import RatingBox from "./RatingBox";
 import GenreTag from "./GenreTag";
 import Person from "./Person";
+import { motion } from "motion/react";
+
+const containerVariants = {
+  hidden: {
+    x: "-100vw",
+    opacity: 0,
+  },
+  visible: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      duration: 2.5,
+      opacity: { duration: 2 },
+      staggerchildren: 2,
+    },
+  },
+};
 
 function MovieDetails({ selectedMovie }: MovieDetailsProps) {
   const { showId } = useParams();
 
-  console.log(showId);
   const { data, isLoading, error } = useQuery<QueryData>({
     queryKey: ["movies", showId],
     queryFn: () => getShows(showId || "", "tt"),
@@ -25,10 +41,13 @@ function MovieDetails({ selectedMovie }: MovieDetailsProps) {
     return <div>Error: {error.message}</div>;
   }
 
-  console.log(data?.short);
-
   return (
-    <div className="bg-genoa-950 rounded-4xl px-5 py-5 text-white">
+    <motion.div
+      variants={containerVariants}
+      initial="hidden"
+      animate="visible"
+      className="bg-genoa-950 rounded-4xl px-5 py-5 text-white"
+    >
       <div className="text-center">
         <p className="mb-2 text-4xl">{data?.short?.name}</p>
         <div className="flex items-center justify-center gap-4">
@@ -75,7 +94,7 @@ function MovieDetails({ selectedMovie }: MovieDetailsProps) {
           </Link>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 

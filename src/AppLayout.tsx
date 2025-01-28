@@ -1,11 +1,11 @@
-import Navbar from "./Navbar";
+import Navbar from "./Navbar/Navbar";
 import { Outlet } from "react-router";
 
-function AppLayout({
-  setQueryText,
-}: {
+type AppLayoutProps = {
   setQueryText: React.Dispatch<React.SetStateAction<string>>;
-}) {
+};
+
+function AppLayout({ setQueryText }: AppLayoutProps) {
   return (
     <>
       <Navbar onQueryText={setQueryText} />
