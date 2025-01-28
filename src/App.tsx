@@ -3,7 +3,7 @@ import MovieList from "./MovieList";
 import { getShows } from "./utils/fetchData";
 import { QueryData } from "./Alltypes";
 import { useState } from "react";
-import MovieDetails from "./MovieDetails";
+import MovieDetails from "./MovieDetails/MovieDetails";
 import { BrowserRouter, Route, Routes } from "react-router";
 import AppLayout from "./AppLayout";
 

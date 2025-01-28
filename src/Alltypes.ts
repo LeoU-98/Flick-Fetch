@@ -40,3 +40,14 @@ export type MovieProps = {
 export type NavBarProps = {
   onQueryText: React.Dispatch<React.SetStateAction<string>>;
 };
+
+export type PersonListProps = {
+  list: { url: string; name: string }[];
+};
+
+export type TrailerBoxProps = {
+  data: QueryData | undefined;
+};
+export type RatingBoxProps = {
+  data: QueryData | undefined;
+};
