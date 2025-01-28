@@ -41,8 +41,9 @@ export type NavBarProps = {
   onQueryText: React.Dispatch<React.SetStateAction<string>>;
 };
 
-export type PersonListProps = {
+export type PersonProps = {
   list: { url: string; name: string }[];
+  type: string;
 };
 
 export type TrailerBoxProps = {
