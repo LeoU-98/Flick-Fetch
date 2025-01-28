@@ -9,7 +9,7 @@ function AppLayout({
   return (
     <>
       <Navbar onQueryText={setQueryText} />
-      <main className="container mx-auto p-4">
+      <main className="container mx-auto p-4 px-20">
         <Outlet />
       </main>
     </>

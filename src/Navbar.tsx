@@ -19,16 +19,18 @@ function Navbar({ onQueryText }: NavBarProps) {
         <SVG />
         <h1 className="text-3xl">Flick Fetch</h1>
       </div>
-      <div>
+      <div className="relative flex items-center">
         <input
           type="text"
           placeholder="search"
           className="w-96 rounded-full bg-white p-2 px-4 text-gray-950 outline-none"
           ref={searchRef}
         />
-        <button>
-          <CiSearch className="size-8" onClick={searchButtonHandler} />
-        </button>
+
+        <CiSearch
+          className="bg-genoa-800 absolute right-0 z-10 block h-full w-20 cursor-pointer rounded-r-full py-1"
+          onClick={searchButtonHandler}
+        />
       </div>
       <div>Later will see his </div>
     </div>
