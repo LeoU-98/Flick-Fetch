@@ -1,5 +1,5 @@
 import { Link, useParams } from "react-router";
-import { MovieDetailsProps, QueryData } from "../Alltypes";
+import { QueryData } from "../Alltypes";
 import { getShows } from "../utils/fetchData";
 import { useQuery } from "@tanstack/react-query";
 import { getDurationTime } from "../utils/extractTimeDate";
@@ -25,7 +25,7 @@ const containerVariants = {
   },
 };
 
-function MovieDetails({ selectedMovie }: MovieDetailsProps) {
+function MovieDetails() {
   const { showId } = useParams();
 
   const { data, isLoading, error } = useQuery<QueryData>({
@@ -62,7 +62,7 @@ function MovieDetails({ selectedMovie }: MovieDetailsProps) {
       <div className="mb-3 flex w-full justify-between">
         <img
           src={data?.short?.image}
-          alt={selectedMovie?.["#TITLE"]}
+          alt={data?.short?.name}
           className="h-[480px] w-96 rounded-lg"
         />
         <TrailerBox data={data} />

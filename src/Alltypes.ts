@@ -27,7 +27,6 @@ export type MovieListProps = {
   data: { description: Show[] } | undefined;
   isLoading: boolean;
   error: Error | null;
-  onSelect: React.Dispatch<React.SetStateAction<string>>;
 };
 
 export type MovieDetailsProps = {
