@@ -1,4 +1,5 @@
-export async function getShows(queryText: string, queryType: string) {
+export async function getShows(queryText: string, queryType: "q" | "tt") {
+  // export async function getShows(queryText: string, queryType: string) {
   const url = `https://imdb.iamidiotareyoutoo.com/search?${queryType}=${queryText}`;
 
   if (queryText.length < 3) return;

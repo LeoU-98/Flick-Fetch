@@ -12,15 +12,9 @@ export type Show = {
   photo_width: string;
 };
 
-export type QueryData = {
+export type QueryData<T> = {
   description: Show[];
-  short?: object;
-};
-
-export type QueryResult = {
-  data: QueryData;
-  isLoading: boolean;
-  error: Error;
+  short?: T;
 };
 
 export type MovieListProps = {
@@ -45,9 +39,25 @@ export type PersonProps = {
   type: string;
 };
 
-export type TrailerBoxProps = {
-  data: QueryData | undefined;
+type Data = {
+  short: {
+    trailer: {
+      thumbnailUrl: string;
+      url: string;
+      duration: string;
+    };
+    name: string;
+    aggregateRating: {
+      ratingValue: string;
+      ratingCount: number;
+    };
+  };
 };
+
+export type TrailerBoxProps = {
+  data: Data;
+};
+
 export type RatingBoxProps = {
-  data: QueryData | undefined;
+  data: Data;
 };

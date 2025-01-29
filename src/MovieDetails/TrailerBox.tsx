@@ -29,7 +29,7 @@ function TrailerBox({ data }: TrailerBoxProps) {
         <svg
           stroke="currentColor"
           fill="currentColor"
-          stroke-width="0"
+          strokeWidth="0"
           viewBox="0 0 512 512"
           height="1em"
           width="1em"
@@ -38,8 +38,8 @@ function TrailerBox({ data }: TrailerBoxProps) {
         >
           <motion.path
             fill="none"
-            stroke-miterlimit="10"
-            stroke-width="32"
+            strokeMiterlimit="10"
+            strokeWidth="32"
             d="M448 256c0-106-86-192-192-192S64 150 64 256s86 192 192 192 192-86 192-192z"
             variants={pathVairants}
             initial="initial"

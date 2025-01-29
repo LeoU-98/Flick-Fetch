@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import MovieList from "./MovieList/MovieList";
 import { getShows } from "./utils/fetchData";
-import { QueryData } from "./Alltypes";
+// import { QueryData } from "./Alltypes";
 import { useState } from "react";
 import MovieDetails from "./MovieDetails/MovieDetails";
 import { BrowserRouter, Route, Routes } from "react-router";
@@ -9,10 +9,15 @@ import AppLayout from "./AppLayout";
 
 function App() {
   const [queryText, setQueryText] = useState("");
-  const { data, isLoading, error } = useQuery<QueryData>({
+  const { data, isLoading, error } = useQuery({
     queryKey: ["movies", queryText],
     queryFn: () => getShows(queryText, "q"),
   });
+
+  // const { data, isLoading, error } = useQuery<QueryData>({
+  //   queryKey: ["movies", queryText],
+  //   queryFn: () => getShows(queryText, "q"),
+  // });
 
   return (
     <BrowserRouter>
