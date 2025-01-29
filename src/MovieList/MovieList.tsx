@@ -17,11 +17,6 @@ const containerVariants = {
       staggerchildren: 2,
     },
   },
-
-  exit: {
-    x: "100vw",
-    opacity: 0,
-  },
 };
 
 function MovieList({ data, isLoading, error }: MovieListProps) {
@@ -38,7 +33,6 @@ function MovieList({ data, isLoading, error }: MovieListProps) {
       variants={containerVariants}
       initial="hidden"
       animate="visible"
-      exit="exit"
       className="bg-genoa-500/90 grid grid-cols-2 gap-5 rounded-4xl px-8 py-14"
     >
       {data?.description?.map((movie) => (
