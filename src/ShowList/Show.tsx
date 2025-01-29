@@ -1,14 +1,13 @@
 import { Link } from "react-router";
-
 import { MovieProps } from "../Alltypes";
 
-function Movie({ movie }: MovieProps) {
-  const { "#IMG_POSTER": poster, "#TITLE": title, "#YEAR": year } = movie;
+function Show({ show }: MovieProps) {
+  const { "#IMG_POSTER": poster, "#TITLE": title, "#YEAR": year } = show;
 
   return (
     <li className="bg-genoa-950/95 w-full cursor-pointer rounded-4xl text-white">
       <Link
-        to={`/show/${movie["#IMDB_ID"]}`}
+        to={`/show/show-details/?tt=${show["#IMDB_ID"]}`}
         className="flex size-full min-h-24 gap-5 p-2 px-10"
       >
         <img src={poster} alt={title} className="block w-20" />
@@ -20,4 +19,4 @@ function Movie({ movie }: MovieProps) {
     </li>
   );
 }
-export default Movie;
+export default Show;

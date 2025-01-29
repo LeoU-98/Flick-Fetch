@@ -1,13 +1,11 @@
-import { Link, useParams } from "react-router";
-import { QueryData } from "../Alltypes";
 import { getShows } from "../utils/fetchData";
-import { useQuery } from "@tanstack/react-query";
 import { getDurationTime } from "../utils/extractTimeDate";
 import TrailerBox from "./TrailerBox";
 import RatingBox from "./RatingBox";
 import GenreTag from "./GenreTag";
 import Person from "./Person";
 import { motion } from "motion/react";
+import { Link, LoaderFunctionArgs, useLoaderData } from "react-router";
 
 const containerVariants = {
   hidden: {
@@ -25,21 +23,8 @@ const containerVariants = {
   },
 };
 
-function MovieDetails() {
-  const { showId } = useParams();
-
-  const { data, isLoading, error } = useQuery<QueryData>({
-    queryKey: ["movies", showId],
-    queryFn: () => getShows(showId || "", "tt"),
-  });
-
-  if (isLoading) {
-    return <div>Loading...</div>;
-  }
-
-  if (error instanceof Error) {
-    return <div>Error: {error.message}</div>;
-  }
+function ShowDetails() {
+  const data = useLoaderData();
 
   return (
     <motion.div
@@ -72,7 +57,7 @@ function MovieDetails() {
       <div className="flex items-center justify-between">
         <div className="w-3/4 max-w-[800px]">
           <ul className="mb-3 flex items-center gap-2">
-            {data?.short?.genre?.map((tag, index) => (
+            {data?.short?.genre?.map((tag: string, index: number) => (
               <GenreTag tag={tag} key={index} />
             ))}
           </ul>
@@ -98,4 +83,12 @@ function MovieDetails() {
   );
 }
 
-export default MovieDetails;
+export default ShowDetails;
+
+export const loader = async ({ request }: LoaderFunctionArgs) => {
+  const url = new URL(request.url);
+  const query = url.searchParams.get("tt") || "";
+  const show = await getShows(query, "tt");
+
+  return show;
+};

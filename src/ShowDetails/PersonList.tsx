@@ -1,4 +1,5 @@
 import { Link } from "react-router";
+import { PersonListProps } from "../Alltypes";
 
 function PersonList({ list }: PersonListProps) {
   return list?.map((person, index) => (

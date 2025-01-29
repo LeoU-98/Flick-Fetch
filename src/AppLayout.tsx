@@ -1,14 +1,10 @@
-import Navbar from "./Navbar/Navbar";
 import { Outlet } from "react-router";
+import Navbar from "./Navbar/Navbar";
 
-type AppLayoutProps = {
-  setQueryText: React.Dispatch<React.SetStateAction<string>>;
-};
-
-function AppLayout({ setQueryText }: AppLayoutProps) {
+function AppLayout() {
   return (
     <>
-      <Navbar onQueryText={setQueryText} />
+      <Navbar />
       <main className="container mx-auto p-4 px-20">
         <Outlet />
       </main>

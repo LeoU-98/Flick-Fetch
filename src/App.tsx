@@ -1,40 +1,38 @@
-import { useQuery } from "@tanstack/react-query";
-import MovieList from "./MovieList/MovieList";
-import { getShows } from "./utils/fetchData";
-// import { QueryData } from "./Alltypes";
-import { useState } from "react";
-import MovieDetails from "./MovieDetails/MovieDetails";
-import { BrowserRouter, Route, Routes } from "react-router";
+import ShowList from "./ShowList/ShowList";
 import AppLayout from "./AppLayout";
+import Wellcome from "./Wellcome";
+import { loader as showListLoader } from "./ShowList/ShowList";
+import { loader as showLoader } from "./ShowDetails/ShowDetails";
+import ShowDetails from "./ShowDetails/ShowDetails";
+import { createBrowserRouter, RouterProvider } from "react-router";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <AppLayout />,
+    children: [
+      {
+        index: true,
+        element: <Wellcome />,
+        loader: showListLoader,
+      },
+
+      {
+        path: "show/*",
+        element: <ShowList />,
+        loader: showListLoader,
+      },
+      {
+        path: "show/show-details/*",
+        element: <ShowDetails />,
+        loader: showLoader,
+      },
+    ],
+  },
+]);
 
 function App() {
-  const [queryText, setQueryText] = useState("");
-  const { data, isLoading, error } = useQuery({
-    queryKey: ["movies", queryText],
-    queryFn: () => getShows(queryText, "q"),
-  });
-
-  // const { data, isLoading, error } = useQuery<QueryData>({
-  //   queryKey: ["movies", queryText],
-  //   queryFn: () => getShows(queryText, "q"),
-  // });
-
-  return (
-    <BrowserRouter>
-      <Routes>
-        <Route element={<AppLayout setQueryText={setQueryText} />}>
-          <Route
-            index
-            path="/"
-            element={
-              <MovieList data={data} isLoading={isLoading} error={error} />
-            }
-          />
-          <Route path="/show/:showId" element={<MovieDetails />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;

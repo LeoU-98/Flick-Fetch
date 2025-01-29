@@ -1,15 +1,10 @@
-import { useRef } from "react";
+import { useState } from "react";
 import SVG from "./SVG";
-import { NavBarProps } from "../Alltypes";
 import { CiSearch } from "react-icons/ci";
 import { Link } from "react-router";
 
-function Navbar({ onQueryText }: NavBarProps) {
-  const searchRef = useRef<HTMLInputElement>(null);
-
-  function searchButtonHandler() {
-    onQueryText(searchRef.current?.value || "");
-  }
+function Navbar() {
+  const [searchText, setSearchText] = useState("");
 
   return (
     <div className="bg-genoa-500/80 mb-6 flex items-center justify-between rounded-lg px-4 text-white">
@@ -22,17 +17,15 @@ function Navbar({ onQueryText }: NavBarProps) {
           type="text"
           placeholder="search"
           className="w-96 rounded-full bg-white p-2 px-4 text-gray-950 outline-none"
-          ref={searchRef}
+          value={searchText}
+          onChange={(e) => setSearchText(e.target.value)}
         />
 
         <Link
           className="absolute right-0 z-10 block h-full w-20 cursor-pointer overflow-hidden rounded-r-full"
-          to={"/"}
+          to={`show/?q=${searchText}`}
         >
-          <CiSearch
-            className="bg-genoa-800 size-full py-1"
-            onClick={searchButtonHandler}
-          />
+          <CiSearch className="bg-genoa-800 size-full py-1" />
         </Link>
       </div>
       <div>Later will see his </div>

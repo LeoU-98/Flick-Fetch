@@ -1,4 +1,4 @@
-export type Show = {
+export type Showtype = {
   "#ACTORS": string;
   "#AKA": string;
   "#IMDB_ID": string;
@@ -12,26 +12,15 @@ export type Show = {
   photo_width: string;
 };
 
-export type QueryData<T> = {
-  description: Show[];
-  short?: T;
-};
-
-export type MovieListProps = {
-  data: { description: Show[] } | undefined;
-  isLoading: boolean;
-  error: Error | null;
-};
-
-export type MovieDetailsProps = {
-  selectedMovie: Show | undefined;
+export type PersonListProps = {
+  list: {
+    name: string;
+    url: string;
+  }[];
 };
 
 export type MovieProps = {
-  movie: Show;
-};
-export type NavBarProps = {
-  onQueryText: React.Dispatch<React.SetStateAction<string>>;
+  show: Showtype;
 };
 
 export type PersonProps = {

@@ -14,25 +14,6 @@ body::before {
   height: 100%;
   z-index: -1000;
 }
-/* 
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-
-::-webkit-scrollbar-track {
-  background: #f1f1f1;
-}
-
-
-::-webkit-scrollbar-thumb {
-  background: #062d2c;
-}
-
-
-::-webkit-scrollbar-thumb:hover {
-  background: #145b56;
-} */
 
 @theme {
   --color-shakespeare-50: #f2f9fd;
