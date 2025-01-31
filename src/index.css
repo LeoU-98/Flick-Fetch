@@ -2,8 +2,8 @@
 
 body {
   background-image: url(./assets/background.jpg);
-  /* overflow-x: hidden;
-  overflow-y: hidden; */
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 body::before {
