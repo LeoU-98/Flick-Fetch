@@ -9,13 +9,11 @@ import { Link, LoaderFunctionArgs, useLoaderData } from "react-router";
 
 const containerVariants = {
   hidden: {
-    opacity: 0,
+    opacity: 0.1,
   },
   visible: {
     opacity: 1,
-    transition: {
-      duration: 3,
-    },
+    transition: { duration: 1 },
   },
 };
 
@@ -31,12 +29,13 @@ function ShowDetails() {
       animate="visible"
       className="rounded-4xl bg-gradient-to-r from-slate-900/80 to-slate-700/80 px-5 py-5 text-white"
     >
-      <div className="text-center">
-        <p className="mb-2 text-4xl">{data?.short?.name}</p>
-        <div className="flex items-center justify-center gap-4">
-          <p className="text-sm">{data?.short?.datePublished?.split("-")[0]}</p>
-          <p className="text-sm">{data?.short?.contentRating}</p>
-          <p className="text-sm">
+      <div className="mb-4">
+        <div className="mb-1 flex items-center gap-3 pl-5">
+          <p className="text-4xl">{data?.short?.name}</p>
+          <p className="text-2xl">
+            ({data?.short?.datePublished?.split("-")[0]})
+          </p>
+          <p className="ml-auto rounded-xl bg-black px-8 py-2 text-lg">
             {getDurationTime(data?.short?.duration, "show")}
           </p>
         </div>
@@ -71,7 +70,8 @@ function ShowDetails() {
         <div className="w-1/4">
           <Link
             to={data?.short?.url}
-            className="rounded-full bg-black px-5 py-3 text-white"
+            target="_blank"
+            className=".glow-on-hover glow-on-hover rounded-full px-15 py-2"
           >
             Go To IMDB
           </Link>

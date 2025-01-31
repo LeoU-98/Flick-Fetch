@@ -14,7 +14,6 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Wellcome />,
-        loader: showListLoader,
       },
 
       {

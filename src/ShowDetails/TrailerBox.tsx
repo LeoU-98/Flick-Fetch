@@ -8,6 +8,7 @@ const pathVairants = {
     pathLength: 1,
 
     transition: {
+      delay: 1.5,
       duration: 1,
     },
   },
@@ -26,7 +27,7 @@ function TrailerBox({ data }: TrailerBoxProps) {
         className="absolute top-1/2 left-1/2 flex -translate-x-1/2 -translate-y-1/2 cursor-pointer items-center text-3xl text-white outline-none"
         onClick={() => window.open(data?.short?.trailer?.url, "_blank")}
       >
-        <svg
+        <motion.svg
           stroke="currentColor"
           fill="currentColor"
           strokeWidth="0"
@@ -35,6 +36,9 @@ function TrailerBox({ data }: TrailerBoxProps) {
           width="1em"
           xmlns="http://www.w3.org/2000/svg"
           className="size-20 opacity-80"
+          whileHover={{
+            scale: 1.2,
+          }}
         >
           <motion.path
             fill="none"
@@ -51,7 +55,7 @@ function TrailerBox({ data }: TrailerBoxProps) {
             animate="animate"
             d="m216.32 334.44 114.45-69.14a10.89 10.89 0 0 0 0-18.6l-114.45-69.14a10.78 10.78 0 0 0-16.32 9.31v138.26a10.78 10.78 0 0 0 16.32 9.31z"
           ></motion.path>
-        </svg>
+        </motion.svg>
       </button>
       <span className="absolute right-3 bottom-2 text-lg">
         {getDurationTime(data?.short?.trailer?.duration, "trailer")}

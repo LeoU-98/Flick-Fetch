@@ -9,6 +9,10 @@ const containerVariants = {
     x: 0,
     opacity: 1,
   },
+
+  exit: {
+    x: "100vw",
+  },
 };
 
 const Welcome: React.FC = () => {
@@ -17,6 +21,7 @@ const Welcome: React.FC = () => {
       variants={containerVariants}
       initial="hidden"
       animate="visible"
+      exit="exit"
       transition={{ type: "spring", visualDuration: 1, bounce: 0.4 }}
       className="flex flex-col items-center justify-center rounded-4xl bg-gradient-to-r from-slate-900/80 to-slate-700/80 py-40 text-center text-white"
     >
@@ -35,8 +40,9 @@ const Welcome: React.FC = () => {
         animate={{ opacity: 1 }}
         transition={{ delay: 0.5, duration: 1 }}
       >
-        Join us and explore amazing features. Enhance your experience with our
-        cutting-edge technology.
+        Your go-to spot for the latest movies, TV shows, and series. Stay
+        updated, explore recommendations, and find your next favorite watch—all
+        in one place!
       </motion.p>
     </motion.div>
   );

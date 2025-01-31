@@ -14,6 +14,6 @@ export function getDurationTime(pattern: string, type: string): string {
       return `unknow type`;
     }
   } else {
-    return "Invalid duration format";
+    return "N/A";
   }
 }

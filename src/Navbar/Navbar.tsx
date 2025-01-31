@@ -14,12 +14,12 @@ function Navbar() {
   };
 
   return (
-    <div className="mb-6 flex items-center justify-between rounded-lg bg-gradient-to-r from-[#000851] to-[#1CB5E0] px-4 text-white">
-      <Link className="flex items-center gap-1" to={"/"}>
+    <div className="mb-6 flex flex-wrap items-center justify-between gap-5 rounded-lg bg-gradient-to-r from-[#000851] to-[#1CB5E0] px-60 text-white">
+      <Link className="order-1 flex items-center gap-1" to={"/"}>
         <SVG />
         <h1 className="text-3xl">Flick Fetch</h1>
       </Link>
-      <div className="flex items-center">
+      <div className="order-3 flex items-center">
         <motion.input
           onFocus={() => {
             setIsFocused(true);
@@ -36,7 +36,14 @@ function Navbar() {
 
         <Link className="h-10 w-20 cursor-pointer" to={`show/?q=${searchText}`}>
           <motion.svg
+            initial={{ backgroundColor: "#314158 " }}
             animate={isFocused ? { scale: 1.1 } : { scale: 1 }}
+            whileHover={{
+              backgroundColor: "#000851",
+              transition: {
+                duration: 0.3,
+              },
+            }}
             stroke="currentColor"
             fill="currentColor"
             strokeWidth="0"
@@ -61,7 +68,7 @@ function Navbar() {
           </motion.svg>
         </Link>
       </div>
-      <div>Later will see his </div>
+      <div className="order-2">Later will see his </div>
     </div>
   );
 }

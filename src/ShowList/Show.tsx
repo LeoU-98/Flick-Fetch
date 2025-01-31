@@ -8,14 +8,13 @@ const containerVariants = {
     scale: 1,
   },
 
-  animate: {
+  hover: {
     scale: 1.05,
     transition: {
       type: "spring",
       mass: 1,
       damping: 1,
       stiffness: 200,
-      // damping: 1,
       repeat: Infinity,
       repeatType: "reverse",
     },
@@ -23,7 +22,13 @@ const containerVariants = {
 };
 
 function Show({ show }: MovieProps) {
-  const { "#IMG_POSTER": poster, "#TITLE": title, "#YEAR": year } = show;
+  const {
+    "#IMG_POSTER": poster,
+    "#TITLE": title,
+    "#YEAR": year,
+    "#ACTORS": actors,
+    "#RANK": rank,
+  } = show;
   const [isFocused, setIsFocused] = useState(false);
 
   console.log(show);
@@ -34,12 +39,9 @@ function Show({ show }: MovieProps) {
       onFocus={() => setIsFocused(true)}
       onBlur={() => setIsFocused(false)}
       initial="initial"
-      whileHover="animate"
-      animate={
-        isFocused ? containerVariants.animate : containerVariants.initial
-      }
+      whileHover="hover"
+      animate={isFocused ? containerVariants.hover : containerVariants.initial}
       className="w-full cursor-pointer rounded-4xl bg-black text-white focus:outline-none"
-      // className="bg-genoa-950/95 w-full cursor-pointer rounded-4xl text-white focus:outline-none"
     >
       <Link
         to={`/show/show-details/?tt=${show["#IMDB_ID"]}`}
@@ -58,8 +60,15 @@ function Show({ show }: MovieProps) {
         )}
 
         <div className="flex w-full items-center justify-between">
-          <p>{title}</p>
-          <p>{year}</p>
+          <div>
+            <p>{title}</p>
+            <p>{year}</p>
+            <p>{actors}</p>
+          </div>
+          <div className="text-center">
+            <p>Rank</p>
+            <p>#{rank}</p>
+          </div>
         </div>
       </Link>
     </motion.li>
