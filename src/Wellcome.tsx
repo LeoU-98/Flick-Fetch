@@ -18,175 +18,16 @@ const Welcome: React.FC = () => {
       initial="hidden"
       animate="visible"
       transition={{ type: "spring", visualDuration: 1, bounce: 0.4 }}
-      className="to-genoa-600/85 flex flex-col items-center justify-center rounded-4xl bg-gradient-to-br from-blue-500/85 text-center text-white"
+      className="flex flex-col items-center justify-center rounded-4xl bg-gradient-to-r from-slate-900/80 to-slate-700/80 py-40 text-center text-white"
     >
-      <motion.svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="200"
-        height="200"
-        viewBox="0 0 24 24"
-        fill="none"
-        // initial={{ x: [] }}
-        animate={{ x: [20, 0, -20] }}
-        // initial={{ scale: 0.5 }}
-        // animate={{ scale: 1 }}
-        transition={{
-          type: "spring",
-          stiffness: 500,
-          repeatType: "reverse",
-          repeat: Infinity,
-        }}
-      >
-        <path
-          fill="url(#paint0_linear_2535_6884)"
-          d="M12 2C13.8452 2 15.3293 2 16.5401 2.08783L13.0986 7.25002H8.40139L11.9014 2H12Z"
-        />
-
-        <path
-          fill="url(#paint2_linear_2535_6884)"
-          fillRule="evenodd"
-          d="M2 12C2 10.7633 2 9.68875 2.02644 8.75002H21.9736C22 9.68875 22 10.7633 22 12C22 16.714 22 19.0711 20.5355 20.5355C19.0711 22 16.714 22 12 22C7.28595 22 4.92893 22 3.46447 20.5355C2 19.0711 2 16.714 2 12ZM13.014 12.5852C14.338 13.4395 15 13.8666 15 14.5C15 15.1334 14.338 15.5605 13.014 16.4148C11.6719 17.2807 11.0008 17.7137 10.5004 17.3958C10 17.0779 10 16.2186 10 14.5C10 12.7814 10 11.9221 10.5004 11.6042C11.0008 11.2863 11.6719 11.7193 13.014 12.5852Z"
-          clipRule="evenodd"
-        />
-
-        <path
-          fill="url(#paint1_linear_2535_6884)"
-          d="M3.46447 3.46447C4.71683 2.2121 6.62194 2.03072 10.0957 2.00445L6.59861 7.25002H2.10418C2.25143 5.48593 2.6068 4.32213 3.46447 3.46447Z"
-        />
-        <path
-          fill="url(#paint3_linear_2535_6884)"
-          d="M21.8958 7.25002C21.7486 5.48593 21.3932 4.32213 20.5355 3.46447C19.9382 2.86714 19.1924 2.51345 18.1987 2.30403L14.9014 7.25002H21.8958Z"
-        />
-
-        <defs>
-          <linearGradient
-            id="paint0_linear_2535_6884"
-            x1="12"
-            x2="12"
-            y1="2"
-            y2="22"
-            gradientUnits="userSpaceOnUse"
-          >
-            <stop stopColor="#854D9C" />
-            <stop offset="1" stopColor="#CD4ED3" />
-          </linearGradient>
-          <linearGradient
-            id="paint1_linear_2535_6884"
-            x1="12"
-            x2="12"
-            y1="2"
-            y2="22"
-            gradientUnits="userSpaceOnUse"
-          >
-            <stop stopColor="#854D9C" />
-            <stop offset="1" stopColor="#CD4ED3" />
-          </linearGradient>
-          <linearGradient
-            id="paint2_linear_2535_6884"
-            x1="12"
-            x2="12"
-            y1="2"
-            y2="22"
-            gradientUnits="userSpaceOnUse"
-          >
-            <stop stopColor="#854D9C" />
-            <stop offset="1" stopColor="#CD4ED3" />
-          </linearGradient>
-          <linearGradient
-            id="paint3_linear_2535_6884"
-            x1="12"
-            x2="12"
-            y1="2"
-            y2="22"
-            gradientUnits="userSpaceOnUse"
-          >
-            <stop stopColor="#854D9C" />
-            <stop offset="1" stopColor="#CD4ED3" />
-          </linearGradient>
-        </defs>
-      </motion.svg>
-
-      {/* <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
-        fill="none"
-        viewBox="0 0 24 24"
-        id="clapperboard-play"
-      >
-        <path
-          fill="url(#paint0_linear_2535_6884)"
-          d="M12 2C13.8452 2 15.3293 2 16.5401 2.08783L13.0986 7.25002H8.40139L11.9014 2H12Z"
-        ></path>
-        <path
-          fill="url(#paint1_linear_2535_6884)"
-          d="M3.46447 3.46447C4.71683 2.2121 6.62194 2.03072 10.0957 2.00445L6.59861 7.25002H2.10418C2.25143 5.48593 2.6068 4.32213 3.46447 3.46447Z"
-        ></path>
-        <path
-          fill="url(#paint2_linear_2535_6884)"
-          fillRule="evenodd"
-          d="M2 12C2 10.7633 2 9.68875 2.02644 8.75002H21.9736C22 9.68875 22 10.7633 22 12C22 16.714 22 19.0711 20.5355 20.5355C19.0711 22 16.714 22 12 22C7.28595 22 4.92893 22 3.46447 20.5355C2 19.0711 2 16.714 2 12ZM13.014 12.5852C14.338 13.4395 15 13.8666 15 14.5C15 15.1334 14.338 15.5605 13.014 16.4148C11.6719 17.2807 11.0008 17.7137 10.5004 17.3958C10 17.0779 10 16.2186 10 14.5C10 12.7814 10 11.9221 10.5004 11.6042C11.0008 11.2863 11.6719 11.7193 13.014 12.5852Z"
-          clipRule="evenodd"
-        ></path>
-        <path
-          fill="url(#paint3_linear_2535_6884)"
-          d="M21.8958 7.25002C21.7486 5.48593 21.3932 4.32213 20.5355 3.46447C19.9382 2.86714 19.1924 2.51345 18.1987 2.30403L14.9014 7.25002H21.8958Z"
-        ></path>
-        <defs>
-          <linearGradient
-            id="paint0_linear_2535_6884"
-            x1="12"
-            x2="12"
-            y1="2"
-            y2="22"
-            gradientUnits="userSpaceOnUse"
-          >
-            <stop stopColor="#854D9C"></stop>
-            <stop offset="1" stopColor="#CD4ED3"></stop>
-          </linearGradient>
-          <linearGradient
-            id="paint1_linear_2535_6884"
-            x1="12"
-            x2="12"
-            y1="2"
-            y2="22"
-            gradientUnits="userSpaceOnUse"
-          >
-            <stop stopColor="#854D9C"></stop>
-            <stop offset="1" stopColor="#CD4ED3"></stop>
-          </linearGradient>
-          <linearGradient
-            id="paint2_linear_2535_6884"
-            x1="12"
-            x2="12"
-            y1="2"
-            y2="22"
-            gradientUnits="userSpaceOnUse"
-          >
-            <stop stopColor="#854D9C"></stop>
-            <stop offset="1" stopColor="#CD4ED3"></stop>
-          </linearGradient>
-          <linearGradient
-            id="paint3_linear_2535_6884"
-            x1="12"
-            x2="12"
-            y1="2"
-            y2="22"
-            gradientUnits="userSpaceOnUse"
-          >
-            <stop stopColor="#854D9C"></stop>
-            <stop offset="1" stopColor="#CD4ED3"></stop>
-          </linearGradient>
-        </defs>
-      </svg> */}
-      {/* /////////////////////////////////////////////////////////////////////////////////////////////////////////// */}
+      <WelcomePageSVG />
       <motion.h1
         className="mb-4 text-5xl font-bold"
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.25 }}
       >
-        Welcome to Our Platform
+        Welcome to Flick Fetch
       </motion.h1>
       <motion.p
         className="mb-6 max-w-md text-lg"
@@ -197,15 +38,93 @@ const Welcome: React.FC = () => {
         Join us and explore amazing features. Enhance your experience with our
         cutting-edge technology.
       </motion.p>
-      <motion.button
-        className="rounded-lg bg-white px-6 py-3 font-semibold text-blue-600 shadow-lg transition hover:bg-gray-200"
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.9 }}
-      >
-        Get Started
-      </motion.button>
     </motion.div>
   );
 };
 
 export default Welcome;
+
+function WelcomePageSVG() {
+  return (
+    <motion.svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="150"
+      height="150"
+      viewBox="0 0 24 24"
+      fill="none"
+      animate={{ x: [20, 0, -20] }}
+      transition={{
+        type: "spring",
+        stiffness: 500,
+        repeatType: "reverse",
+        repeat: Infinity,
+      }}
+    >
+      <path
+        fill="url(#paint0_linear_2535_6884)"
+        d="M12 2C13.8452 2 15.3293 2 16.5401 2.08783L13.0986 7.25002H8.40139L11.9014 2H12Z"
+      />
+      <path
+        fill="url(#paint2_linear_2535_6884)"
+        fillRule="evenodd"
+        d="M2 12C2 10.7633 2 9.68875 2.02644 8.75002H21.9736C22 9.68875 22 10.7633 22 12C22 16.714 22 19.0711 20.5355 20.5355C19.0711 22 16.714 22 12 22C7.28595 22 4.92893 22 3.46447 20.5355C2 19.0711 2 16.714 2 12ZM13.014 12.5852C14.338 13.4395 15 13.8666 15 14.5C15 15.1334 14.338 15.5605 13.014 16.4148C11.6719 17.2807 11.0008 17.7137 10.5004 17.3958C10 17.0779 10 16.2186 10 14.5C10 12.7814 10 11.9221 10.5004 11.6042C11.0008 11.2863 11.6719 11.7193 13.014 12.5852Z"
+        clipRule="evenodd"
+      />
+      <path
+        fill="url(#paint1_linear_2535_6884)"
+        d="M3.46447 3.46447C4.71683 2.2121 6.62194 2.03072 10.0957 2.00445L6.59861 7.25002H2.10418C2.25143 5.48593 2.6068 4.32213 3.46447 3.46447Z"
+      />
+      <path
+        fill="url(#paint3_linear_2535_6884)"
+        d="M21.8958 7.25002C21.7486 5.48593 21.3932 4.32213 20.5355 3.46447C19.9382 2.86714 19.1924 2.51345 18.1987 2.30403L14.9014 7.25002H21.8958Z"
+      />
+
+      <defs>
+        <linearGradient
+          id="paint0_linear_2535_6884"
+          x1="12"
+          x2="12"
+          y1="2"
+          y2="22"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stopColor="#000851" />
+          <stop offset="1" stopColor="#1CB5E0" />
+        </linearGradient>
+        <linearGradient
+          id="paint1_linear_2535_6884"
+          x1="12"
+          x2="12"
+          y1="2"
+          y2="22"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stopColor="#000851" />
+          <stop offset="1" stopColor="#1CB5E0" />
+        </linearGradient>
+        <linearGradient
+          id="paint2_linear_2535_6884"
+          x1="12"
+          x2="12"
+          y1="2"
+          y2="22"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stopColor="#000851" />
+          <stop offset="1" stopColor="#1CB5E0" />
+        </linearGradient>
+        <linearGradient
+          id="paint3_linear_2535_6884"
+          x1="12"
+          x2="12"
+          y1="2"
+          y2="22"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stopColor="#000851" />
+          <stop offset="1" stopColor="#1CB5E0" />
+        </linearGradient>
+      </defs>
+    </motion.svg>
+  );
+}

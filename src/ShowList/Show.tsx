@@ -38,7 +38,8 @@ function Show({ show }: MovieProps) {
       animate={
         isFocused ? containerVariants.animate : containerVariants.initial
       }
-      className="bg-genoa-950/95 w-full cursor-pointer rounded-4xl text-white focus:outline-none"
+      className="w-full cursor-pointer rounded-4xl bg-black text-white focus:outline-none"
+      // className="bg-genoa-950/95 w-full cursor-pointer rounded-4xl text-white focus:outline-none"
     >
       <Link
         to={`/show/show-details/?tt=${show["#IMDB_ID"]}`}

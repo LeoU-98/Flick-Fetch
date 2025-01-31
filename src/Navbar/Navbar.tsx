@@ -14,7 +14,7 @@ function Navbar() {
   };
 
   return (
-    <div className="to-genoa-600 mb-6 flex items-center justify-between rounded-lg bg-gradient-to-br from-blue-500 px-4 text-white">
+    <div className="mb-6 flex items-center justify-between rounded-lg bg-gradient-to-r from-[#000851] to-[#1CB5E0] px-4 text-white">
       <Link className="flex items-center gap-1" to={"/"}>
         <SVG />
         <h1 className="text-3xl">Flick Fetch</h1>
@@ -45,7 +45,7 @@ function Navbar() {
             x="0px"
             y="0px"
             viewBox="0 0 24 24"
-            className="bg-genoa-800 z-10 block size-full overflow-hidden rounded-r-full py-1"
+            className="z-10 block size-full overflow-hidden rounded-r-full bg-slate-700 py-1"
             height="1em"
             width="1em"
             xmlns="http://www.w3.org/2000/svg"

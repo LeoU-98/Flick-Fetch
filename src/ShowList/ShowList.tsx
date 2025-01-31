@@ -7,7 +7,9 @@ function ShowList() {
   const data = useLoaderData();
 
   return (
-    <ul className="bg-genoa-500/90 grid grid-cols-2 gap-5 rounded-4xl px-8 py-14">
+    <ul className="grid grid-cols-2 gap-5 rounded-4xl bg-gradient-to-r from-slate-900/80 to-slate-700/80 px-8 py-14">
+      {/* <ul className="grid grid-cols-2 gap-5 rounded-4xl bg-gray-950 px-8 py-14"> */}
+      {/* <ul className="grid grid-cols-2 gap-5 rounded-4xl bg-gradient-to-r from-slate-900 to-slate-700 px-8 py-14"> */}
       {data?.description?.map((show: Showtype) => (
         <Movie key={show["#IMDB_ID"]} show={show} />
       ))}

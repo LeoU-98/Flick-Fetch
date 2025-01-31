@@ -29,7 +29,7 @@ function ShowDetails() {
       variants={containerVariants}
       initial="hidden"
       animate="visible"
-      className="bg-genoa-950 rounded-4xl px-5 py-5 text-white"
+      className="rounded-4xl bg-gradient-to-r from-slate-900/80 to-slate-700/80 px-5 py-5 text-white"
     >
       <div className="text-center">
         <p className="mb-2 text-4xl">{data?.short?.name}</p>
