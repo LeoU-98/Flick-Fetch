@@ -9,22 +9,20 @@ import { Link, LoaderFunctionArgs, useLoaderData } from "react-router";
 
 const containerVariants = {
   hidden: {
-    x: "-100vw",
     opacity: 0,
   },
   visible: {
-    x: 0,
     opacity: 1,
     transition: {
-      duration: 2.5,
-      opacity: { duration: 2 },
-      staggerchildren: 2,
+      duration: 3,
     },
   },
 };
 
 function ShowDetails() {
   const data = useLoaderData();
+
+  console.log(data);
 
   return (
     <motion.div

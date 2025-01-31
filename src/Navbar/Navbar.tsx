@@ -1,18 +1,24 @@
 import { useState } from "react";
 import SVG from "./SVG";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 import { motion } from "motion/react";
 
 function Navbar() {
   const [searchText, setSearchText] = useState("");
   const [isFocused, setIsFocused] = useState(false);
+  const navigate = useNavigate();
+  const handleKeyDown = (event: React.KeyboardEvent) => {
+    if (event.key === "Enter") {
+      navigate(`show/?q=${searchText}`);
+    }
+  };
 
   return (
     <div className="to-genoa-600 mb-6 flex items-center justify-between rounded-lg bg-gradient-to-br from-blue-500 px-4 text-white">
-      <div className="flex items-center gap-1">
+      <Link className="flex items-center gap-1" to={"/"}>
         <SVG />
         <h1 className="text-3xl">Flick Fetch</h1>
-      </div>
+      </Link>
       <div className="flex items-center">
         <motion.input
           onFocus={() => {
@@ -25,6 +31,7 @@ function Navbar() {
           className="w-80 rounded-l-full bg-white p-2 px-4 text-gray-950 outline-none"
           value={searchText}
           onChange={(e) => setSearchText(e.target.value)}
+          onKeyDown={handleKeyDown}
         />
 
         <Link className="h-10 w-20 cursor-pointer" to={`show/?q=${searchText}`}>

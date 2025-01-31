@@ -4,9 +4,9 @@ import { FaListAlt } from "react-icons/fa";
 
 function formatNumber(number: number) {
   if (number >= 1000000) {
-    return (number / 1000000).toFixed(1) + "M";
+    return (number / 1000000)?.toFixed(1) + "M";
   } else {
-    return number.toString();
+    return number?.toString();
   }
 }
 
