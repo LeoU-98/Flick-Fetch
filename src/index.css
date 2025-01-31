@@ -2,20 +2,17 @@
 
 body {
   background-image: url(./assets/background.jpg);
-  overflow-x: hidden;
-  overflow-y: hidden;
-}
-
-body::before {
-  content: "";
-  background-color: rgba(0, 0, 0, 0.6);
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  z-index: -1000;
 }
 
 @theme {
+  --breakpoint-xsss: 22rem;
+  --breakpoint-xss: 26rem;
+  --breakpoint-sm: 40rem;
+  --breakpoint-md: 48rem;
+  --breakpoint-lg: 64rem;
+  --breakpoint-xl: 80rem;
+  --breakpoint-2xl: 96rem;
+
   --color-shakespeare-50: #f2f9fd;
   --color-shakespeare-100: #e4f1fa;
   --color-shakespeare-200: #c3e4f4;

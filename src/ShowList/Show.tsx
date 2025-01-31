@@ -1,7 +1,7 @@
 import { Link } from "react-router";
-import { MovieProps } from "../Alltypes";
 import { motion } from "motion/react";
 import { useState } from "react";
+import { ShowProps } from "../Alltypes";
 
 const containerVariants = {
   initial: {
@@ -21,7 +21,7 @@ const containerVariants = {
   },
 };
 
-function Show({ show }: MovieProps) {
+function Show({ show }: ShowProps) {
   const {
     "#IMG_POSTER": poster,
     "#TITLE": title,
@@ -45,33 +45,32 @@ function Show({ show }: MovieProps) {
     >
       <Link
         to={`/show/show-details/?tt=${show["#IMDB_ID"]}`}
-        className="flex size-full min-h-24 gap-5 p-2 px-10 focus:outline-none"
+        className="grid size-full min-h-24 grid-cols-[90px_1fr_1fr] items-center gap-5 p-2 px-10 focus:outline-none sm:grid-cols-[90px_auto_90px]"
       >
         {poster ? (
           <img
             src={poster}
             alt={title}
-            className="block h-[100px] w-[85px] overflow-hidden rounded-lg"
+            className="col-start-1 row-start-1 block h-[100px] w-[85px] overflow-hidden rounded-lg"
           />
         ) : (
-          <div className="flex h-[100px] w-[85px] items-center justify-center overflow-hidden rounded-lg bg-gradient-to-br from-red-500 to-black text-center">
+          <div className="col-start-1 row-start-1 flex h-[100px] w-[85px] items-center justify-center overflow-hidden rounded-lg bg-gradient-to-br from-red-500 to-black text-center">
             <p className="text-sm text-white">Sorry, No Poster Found</p>
           </div>
         )}
 
-        <div className="flex w-full items-center justify-between">
-          <div>
-            <p>{title}</p>
-            <p>{year}</p>
-            <p>{actors}</p>
-          </div>
-          <div className="text-center">
-            <p>Rank</p>
-            <p>#{rank}</p>
-          </div>
+        <div className="col-span-2 col-start-1 row-start-2 text-nowrap sm:col-span-1 sm:col-start-2 sm:row-start-1">
+          <p>{title}</p>
+          <p>{year}</p>
+          <p>{actors}</p>
+        </div>
+        <div className="col-span-2 col-start-2 row-start-1 text-center sm:col-span-1 sm:col-start-3">
+          <p>Rank</p>
+          <p>#{rank}</p>
         </div>
       </Link>
     </motion.li>
   );
 }
+
 export default Show;

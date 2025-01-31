@@ -5,6 +5,7 @@ import { loader as showListLoader } from "./ShowList/ShowList";
 import { loader as showLoader } from "./ShowDetails/ShowDetails";
 import ShowDetails from "./ShowDetails/ShowDetails";
 import { createBrowserRouter, RouterProvider } from "react-router";
+import PageNotFound from "./PageNotFound";
 
 const router = createBrowserRouter([
   {
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
         path: "show/show-details/*",
         element: <ShowDetails />,
         loader: showLoader,
+      },
+      {
+        path: "*",
+        element: <PageNotFound />,
       },
     ],
   },

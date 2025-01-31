@@ -14,12 +14,17 @@ function Navbar() {
   };
 
   return (
-    <div className="mb-6 flex flex-wrap items-center justify-between gap-5 rounded-lg bg-gradient-to-r from-[#000851] to-[#1CB5E0] px-60 text-white">
-      <Link className="order-1 flex items-center gap-1" to={"/"}>
+    <div className="xsss:gap-6 mb-6 grid grid-cols-2 gap-x-2 gap-y-6 rounded-lg bg-gradient-to-r from-[#000851] to-[#1CB5E0] px-2 py-4 text-white lg:grid-cols-3">
+      <Link
+        className="col-start-1 row-start-1 flex items-center gap-1"
+        to={"/"}
+      >
         <SVG />
-        <h1 className="text-3xl">Flick Fetch</h1>
+        <h1 className="xsss:text-xl text-lg text-nowrap lg:text-3xl">
+          Flick Fetch
+        </h1>
       </Link>
-      <div className="order-3 flex items-center">
+      <div className="col-span-2 col-start-1 row-start-2 flex items-center justify-center md:row-start-1 lg:col-span-1 lg:col-start-2">
         <motion.input
           onFocus={() => {
             setIsFocused(true);
@@ -28,13 +33,16 @@ function Navbar() {
           animate={isFocused ? { scale: 1.1 } : { scale: 1 }}
           type="text"
           placeholder="search"
-          className="w-80 rounded-l-full bg-white p-2 px-4 text-gray-950 outline-none"
+          className="xsss:px-4 xss:p-2 xss:w-60 rounded-l-full bg-white p-1 px-2 text-gray-950 outline-none sm:w-[300px]"
           value={searchText}
           onChange={(e) => setSearchText(e.target.value)}
           onKeyDown={handleKeyDown}
         />
 
-        <Link className="h-10 w-20 cursor-pointer" to={`show/?q=${searchText}`}>
+        <Link
+          className="xss:h-10 xss:w-20 h-8 w-14 cursor-pointer"
+          to={`show/?q=${searchText}`}
+        >
           <motion.svg
             initial={{ backgroundColor: "#314158 " }}
             animate={isFocused ? { scale: 1.1 } : { scale: 1 }}
@@ -68,7 +76,9 @@ function Navbar() {
           </motion.svg>
         </Link>
       </div>
-      <div className="order-2">Later will see his </div>
+      <div className="col-start-2 row-start-1 flex items-center justify-end lg:col-start-3">
+        <p className="text-xm">Feature to Be added Later</p>
+      </div>
     </div>
   );
 }

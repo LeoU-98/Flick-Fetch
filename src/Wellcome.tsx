@@ -23,11 +23,11 @@ const Welcome: React.FC = () => {
       animate="visible"
       exit="exit"
       transition={{ type: "spring", visualDuration: 1, bounce: 0.4 }}
-      className="flex flex-col items-center justify-center rounded-4xl bg-gradient-to-r from-slate-900/80 to-slate-700/80 py-40 text-center text-white"
+      className="flex flex-col items-center justify-center rounded-4xl bg-gradient-to-r from-slate-900/80 to-slate-700/80 py-10 text-center text-white lg:py-40"
     >
       <WelcomePageSVG />
       <motion.h1
-        className="mb-4 text-5xl font-bold"
+        className="mb-4 text-4xl font-bold sm:text-5xl"
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.25 }}
@@ -35,7 +35,7 @@ const Welcome: React.FC = () => {
         Welcome to Flick Fetch
       </motion.h1>
       <motion.p
-        className="mb-6 max-w-md text-lg"
+        className="mb-6 max-w-md text-sm text-balance sm:text-lg"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.5, duration: 1 }}
@@ -58,7 +58,7 @@ function WelcomePageSVG() {
       height="150"
       viewBox="0 0 24 24"
       fill="none"
-      animate={{ x: [20, 0, -20] }}
+      animate={{ x: [-20, 20, 0] }}
       transition={{
         type: "spring",
         stiffness: 500,

@@ -15,11 +15,10 @@ export default function SVG() {
   return (
     <motion.svg
       xmlns="http://www.w3.org/2000/svg"
-      width="75"
-      height="75"
       fill="none"
       viewBox="0 0 96 96"
       id="movie-reel"
+      className="xsss:size-18 xs:size-[75px] size-12"
     >
       <motion.path
         variants={pathVairants}

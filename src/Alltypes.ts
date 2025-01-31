@@ -19,7 +19,7 @@ export type PersonListProps = {
   }[];
 };
 
-export type MovieProps = {
+export type ShowProps = {
   show: Showtype;
 };
 

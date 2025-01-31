@@ -1,5 +1,5 @@
 import { getShows } from "../utils/fetchData";
-import Movie from "./Show";
+import Show from "./Show";
 import { Showtype } from "../Alltypes";
 import { LoaderFunctionArgs, useLoaderData } from "react-router";
 
@@ -23,10 +23,10 @@ function ShowList() {
       variants={containerVariants}
       initial="hidden"
       animate="visible"
-      className="grid grid-cols-2 gap-5 rounded-4xl bg-gradient-to-r from-slate-900/80 to-slate-700/80 px-8 py-14"
+      className="grid grid-cols-1 gap-3 rounded-4xl bg-gradient-to-r from-slate-900/80 to-slate-700/80 px-4 py-14 xl:grid-cols-2 xl:gap-5 xl:px-8"
     >
       {data?.description?.map((show: Showtype) => (
-        <Movie key={show["#IMDB_ID"]} show={show} />
+        <Show key={show["#IMDB_ID"]} show={show} />
       ))}
     </motion.ul>
   );
