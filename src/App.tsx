@@ -1,11 +1,12 @@
 import ShowList from "./ShowList/ShowList";
-import AppLayout from "./AppLayout";
-import Wellcome from "./Wellcome";
+
+import Wellcome from "./UI/Wellcome";
 import { showListLoader } from "./utils/loaders";
 import { showDetailsLoader } from "./utils/loaders";
 import ShowDetails from "./ShowDetails/ShowDetails";
 import { createBrowserRouter, RouterProvider } from "react-router";
-import PageNotFound from "./PageNotFound";
+import PageNotFound from "./UI/PageNotFound";
+import AppLayout from "./UI/AppLayout";
 
 const router = createBrowserRouter([
   {

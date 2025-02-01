@@ -3,7 +3,7 @@ import { Showtype } from "../Alltypes";
 import { useLoaderData } from "react-router";
 
 import { motion } from "motion/react";
-import ShowNotFound from "../ShowNotFound";
+import ShowNotFound from "../UI/ShowNotFound";
 
 const containerVariants = {
   hidden: {
