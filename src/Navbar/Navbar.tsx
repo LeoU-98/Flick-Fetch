@@ -14,7 +14,7 @@ function Navbar() {
   };
 
   return (
-    <div className="xsss:gap-6 mb-6 grid grid-cols-2 gap-x-2 gap-y-6 rounded-lg bg-gradient-to-r from-[#000851] to-[#1CB5E0] px-2 py-4 text-white lg:grid-cols-3">
+    <div className="xsss:gap-6 mb-6 grid grid-cols-2 gap-x-2 gap-y-6 rounded-lg bg-gradient-to-r from-[#000851] to-[#1CB5E0] px-2 py-4 text-white lg:grid-cols-3 xl:px-10 2xl:px-20">
       <Link
         className="col-start-1 row-start-1 flex items-center gap-1"
         to={"/"}
