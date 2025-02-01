@@ -8,15 +8,13 @@ const containerVariants = {
     scale: 1,
   },
 
-  hover: {
+  hovered: {
     scale: 1.05,
     transition: {
       type: "spring",
       mass: 1,
       damping: 1,
       stiffness: 200,
-      repeat: Infinity,
-      repeatType: "reverse",
     },
   },
 };
@@ -37,8 +35,10 @@ function Show({ show }: ShowProps) {
       onFocus={() => setIsFocused(true)}
       onBlur={() => setIsFocused(false)}
       initial="initial"
-      whileHover="hover"
-      animate={isFocused ? containerVariants.hover : containerVariants.initial}
+      whileHover="hovered"
+      animate={
+        isFocused ? containerVariants.hovered : containerVariants.initial
+      }
       className="w-full cursor-pointer rounded-4xl bg-black text-white focus:outline-none"
     >
       <Link

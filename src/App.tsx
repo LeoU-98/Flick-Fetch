@@ -1,8 +1,8 @@
 import ShowList from "./ShowList/ShowList";
 import AppLayout from "./AppLayout";
 import Wellcome from "./Wellcome";
-import { loader as showListLoader } from "./ShowList/ShowList";
-import { loader as showLoader } from "./ShowDetails/ShowDetails";
+import { showListLoader } from "./utils/loaders";
+import { showDetailsLoader } from "./utils/loaders";
 import ShowDetails from "./ShowDetails/ShowDetails";
 import { createBrowserRouter, RouterProvider } from "react-router";
 import PageNotFound from "./PageNotFound";
@@ -25,7 +25,7 @@ const router = createBrowserRouter([
       {
         path: "show/show-details/*",
         element: <ShowDetails />,
-        loader: showLoader,
+        loader: showDetailsLoader,
       },
       {
         path: "*",

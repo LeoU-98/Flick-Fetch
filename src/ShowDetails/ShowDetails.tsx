@@ -1,11 +1,10 @@
-import { getShows } from "../utils/fetchData";
 import { getDurationTime } from "../utils/extractTimeDate";
 import TrailerBox from "./TrailerBox";
 import RatingBox from "./RatingBox";
 import GenreTag from "./GenreTag";
 import Person from "./Person";
 import { motion } from "motion/react";
-import { Link, LoaderFunctionArgs, useLoaderData } from "react-router";
+import { Link, useLoaderData } from "react-router";
 
 const containerVariants = {
   hidden: {
@@ -80,11 +79,3 @@ function ShowDetails() {
 }
 
 export default ShowDetails;
-
-export const loader = async ({ request }: LoaderFunctionArgs) => {
-  const url = new URL(request.url);
-  const query = url.searchParams.get("tt") || "";
-  const show = await getShows(query, "tt");
-
-  return show;
-};

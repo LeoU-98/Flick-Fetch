@@ -1,7 +1,6 @@
-import { getShows } from "../utils/fetchData";
 import Show from "./Show";
 import { Showtype } from "../Alltypes";
-import { LoaderFunctionArgs, useLoaderData } from "react-router";
+import { useLoaderData } from "react-router";
 
 import { motion } from "motion/react";
 import ShowNotFound from "../ShowNotFound";
@@ -38,11 +37,3 @@ function ShowList() {
 }
 
 export default ShowList;
-
-export const loader = async ({ request }: LoaderFunctionArgs) => {
-  const url = new URL(request.url);
-  const query = url.searchParams.get("q") || "";
-  const show = await getShows(query, "q");
-
-  return show;
-};
