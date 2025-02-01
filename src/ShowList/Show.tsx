@@ -31,8 +31,6 @@ function Show({ show }: ShowProps) {
   } = show;
   const [isFocused, setIsFocused] = useState(false);
 
-  console.log(show);
-
   return (
     <motion.li
       variants={containerVariants}

@@ -11,10 +11,6 @@ const containerVariants = {
     x: 0,
     opacity: 1,
   },
-
-  exit: {
-    x: "100vw",
-  },
 };
 
 const PageNotFound: React.FC = () => {
@@ -23,7 +19,6 @@ const PageNotFound: React.FC = () => {
       variants={containerVariants}
       initial="hidden"
       animate="visible"
-      exit="exit"
       transition={{ type: "spring", visualDuration: 1, bounce: 0.4 }}
       className="flex flex-col items-center justify-center rounded-4xl bg-gradient-to-r from-slate-900/80 to-slate-700/80 px-4 py-10 text-center text-white lg:py-16"
     >

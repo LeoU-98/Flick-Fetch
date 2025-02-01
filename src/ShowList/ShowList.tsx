@@ -4,6 +4,7 @@ import { Showtype } from "../Alltypes";
 import { LoaderFunctionArgs, useLoaderData } from "react-router";
 
 import { motion } from "motion/react";
+import ShowNotFound from "../ShowNotFound";
 
 const containerVariants = {
   hidden: {
@@ -17,6 +18,10 @@ const containerVariants = {
 
 function ShowList() {
   const data = useLoaderData();
+
+  if (data?.description?.length === 0 || !data?.description?.length) {
+    return <ShowNotFound />;
+  }
 
   return (
     <motion.ul
