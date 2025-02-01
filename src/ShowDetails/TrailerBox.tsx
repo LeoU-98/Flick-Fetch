@@ -16,7 +16,7 @@ const pathVairants = {
 
 function TrailerBox({ data }: TrailerBoxProps) {
   return (
-    <div className="relative mx-auto h-[480px] max-w-[800px] text-center">
+    <div className="relative mx-auto text-center md:h-[480px] md:max-w-[800px]">
       <img
         className="size-full cursor-pointer rounded-lg shadow-lg"
         src={data?.short?.trailer?.thumbnailUrl}

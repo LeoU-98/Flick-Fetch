@@ -14,15 +14,15 @@ const buttonVairants = {
 
 function RatingBox({ data }: RatingBoxProps) {
   return (
-    <div className="flex flex-col justify-center gap-28 rounded-2xl bg-gradient-to-b from-black to-slate-900 to-65% px-4">
-      <div className="flex flex-col gap-1">
-        <span>IMDB Rating</span>
+    <div className="flex flex-wrap justify-center gap-5 self-stretch rounded-2xl bg-gradient-to-b from-black to-slate-900 to-65% py-4 text-nowrap sm:w-full sm:gap-20 lg:gap-28 xl:w-auto xl:flex-col xl:px-4">
+      <div className="flex flex-col items-center gap-1">
+        <span className="">IMDB Rating</span>
         <p className="text-base"></p>
         {data?.short?.aggregateRating?.ratingValue}⭐
         {formatNumber(data?.short?.aggregateRating?.ratingCount)}
       </div>
       <div className="flex flex-col items-center gap-2">
-        <p>Your Rating</p>
+        <span className="">Your Rating</span>
         <motion.button
           variants={buttonVairants}
           initial="initial"
@@ -33,7 +33,7 @@ function RatingBox({ data }: RatingBoxProps) {
         </motion.button>
       </div>
       <div className="flex flex-col items-center gap-2">
-        <p>Watched List</p>
+        <span className="">Watched List</span>
         <motion.button
           variants={buttonVairants}
           initial="initial"

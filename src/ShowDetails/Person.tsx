@@ -3,9 +3,11 @@ import { PersonProps } from "../Alltypes";
 
 function Person({ list, type }: PersonProps) {
   return (
-    <div className="flex gap-3 rounded-lg bg-gradient-to-r from-black to-slate-900 p-2 text-nowrap">
-      <p className="">{type} : </p>
-      <ul className="flex gap-4">
+    <div
+      className={`flex ${type === "Stars" ? "flex-col" : ""} rounded-lg bg-gradient-to-r from-black to-slate-900 p-2 text-nowrap sm:flex-row md:gap-3 xl:px-4`}
+    >
+      <p className="mb-2 xl:mb-0">{type} : </p>
+      <ul className="flex flex-col gap-4 pl-4 sm:flex-row xl:items-center">
         {list?.map((person, index) => (
           <li key={index}>
             <Link
