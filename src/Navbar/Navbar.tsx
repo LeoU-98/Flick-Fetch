@@ -44,7 +44,7 @@ function Navbar() {
           to={`show/?q=${searchText}`}
         >
           <motion.svg
-            initial={{ backgroundColor: "#314158 " }}
+            initial={{ backgroundColor: "#314158" }}
             animate={isFocused ? { scale: 1.1 } : { scale: 1 }}
             whileHover={{
               backgroundColor: "#000851",

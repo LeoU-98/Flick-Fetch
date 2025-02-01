@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import notFound from "./assets/notFound.jpg";
+import notFound from "../assets/notFound.jpg";
 import { Link } from "react-router";
 
 const containerVariants = {
