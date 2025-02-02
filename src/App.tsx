@@ -7,11 +7,13 @@ import ShowDetails from "./ShowDetails/ShowDetails";
 import { createBrowserRouter, RouterProvider } from "react-router";
 import PageNotFound from "./UI/PageNotFound";
 import AppLayout from "./UI/AppLayout";
+import ServerDown from "./UI/ServerDown";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <AppLayout />,
+
     children: [
       {
         index: true,
@@ -22,11 +24,13 @@ const router = createBrowserRouter([
         path: "show/*",
         element: <ShowList />,
         loader: showListLoader,
+        errorElement: <ServerDown />,
       },
       {
         path: "show/show-details/*",
         element: <ShowDetails />,
         loader: showDetailsLoader,
+        errorElement: <ServerDown />,
       },
       {
         path: "*",
