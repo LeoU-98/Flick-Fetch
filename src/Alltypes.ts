@@ -29,6 +29,7 @@ export type PersonProps = {
 };
 
 type Data = {
+  imdbId: string;
   short: {
     trailer: {
       thumbnailUrl: string;

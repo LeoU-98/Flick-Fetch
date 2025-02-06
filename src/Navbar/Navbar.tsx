@@ -33,7 +33,7 @@ function Navbar() {
           animate={isFocused ? { scale: 1.1 } : { scale: 1 }}
           type="text"
           placeholder="Search"
-          className="xsss:px-4 xss:p-2 xss:w-60 rounded-l-full bg-white px-3 py-1 pb-1.5 text-gray-950 outline-none sm:w-[300px]"
+          className="xsss:px-4 xss:p-2 xss:w-60 rounded-l-full bg-white px-3 py-1 pb-1.5 text-gray-950 outline-none sm:w-[300px] sm:px-5"
           value={searchText}
           onChange={(e) => setSearchText(e.target.value)}
           onKeyDown={handleKeyDown}

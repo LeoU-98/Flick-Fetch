@@ -4,6 +4,11 @@ body {
   background-image: url(./assets/background.jpg);
 }
 
+.react-player video {
+  object-fit: cover;
+  max-width: none !important;
+}
+
 @theme {
   --breakpoint-xsss: 22rem;
   --breakpoint-xss: 26rem;

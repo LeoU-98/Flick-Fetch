@@ -8,6 +8,7 @@ import { createBrowserRouter, RouterProvider } from "react-router";
 import PageNotFound from "./UI/PageNotFound";
 import AppLayout from "./UI/AppLayout";
 import ServerDown from "./UI/ServerDown";
+import WatchedList from "./WatchedList/WatchedList";
 
 const router = createBrowserRouter([
   {
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
         element: <Wellcome />,
       },
 
+      {
+        path: "show/watchedList",
+        element: <WatchedList />,
+      },
       {
         path: "show/*",
         element: <ShowList />,

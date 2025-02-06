@@ -33,7 +33,7 @@ function ShowDetails() {
         <p className="text-2xl">
           ({data?.short?.datePublished?.split("-")[0]})
         </p>
-        <p className="ml-auto w-full rounded-xl bg-black px-8 py-2 text-center text-lg sm:w-auto">
+        <p className="ml-auto w-full rounded-xl bg-black px-8 py-2 text-center text-lg sm:w-[126px]">
           {getDurationTime(data?.short?.duration, "show")}
         </p>
       </div>
@@ -44,6 +44,7 @@ function ShowDetails() {
           alt={data?.short?.name}
           className="h-[480px] w-96 rounded-lg"
         />
+
         <TrailerBox data={data} />
         <RatingBox data={data} />
       </div>
