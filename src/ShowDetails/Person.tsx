@@ -11,6 +11,7 @@ function Person({ list, type }: PersonProps) {
         {list?.map((person, index) => (
           <li key={index}>
             <Link
+              target="_blank"
               to={person.url}
               className="capitalize duration-150 hover:text-yellow-500"
             >

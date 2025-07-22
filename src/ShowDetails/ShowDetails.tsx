@@ -19,8 +19,6 @@ const containerVariants = {
 function ShowDetails() {
   const data = useLoaderData();
 
-  console.log(data);
-
   return (
     <motion.div
       variants={containerVariants}

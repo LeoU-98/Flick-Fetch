@@ -14,7 +14,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <AppLayout />,
-
+    HydrateFallback: () => <Wellcome />,
     children: [
       {
         index: true,
