@@ -7,7 +7,7 @@ import { Link, useLoaderData } from "react-router";
 import RateModal from "../UI/RateModal";
 import { useEffect, useState } from "react";
 import { LiaImdb } from "react-icons/lia";
-import { decodeHtml, getDurationTime } from "../tempUtils/helpers";
+import { decodeHtml, getDurationTime } from "../Utils/helpers";
 
 const containerVariants = {
   hidden: {

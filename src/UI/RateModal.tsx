@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { formatNumber } from "../tempUtils/helpers";
+import { formatNumber } from "../Utils/helpers";
 import { GoStarFill } from "react-icons/go";
 import { HiXMark } from "react-icons/hi2";
 import { AiFillStar, AiOutlineStar } from "react-icons/ai";

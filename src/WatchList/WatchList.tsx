@@ -1,6 +1,6 @@
 import { useState } from "react";
 import ReactPaginate from "react-paginate";
-import { decodeHtml } from "../tempUtils/helpers";
+import { decodeHtml } from "../Utils/helpers";
 import { useItemsByScreen } from "../Hooks/useItemsByScreen";
 import { Data, WatchShowProps } from "../Alltypes";
 import { Link, useLoaderData } from "react-router";

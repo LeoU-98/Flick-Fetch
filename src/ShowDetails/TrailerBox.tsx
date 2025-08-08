@@ -3,7 +3,7 @@ import { motion } from "motion/react";
 import { useEffect, useState } from "react";
 import ReactPlayer from "react-player";
 import { IoClose } from "react-icons/io5";
-import { getDurationTime } from "../tempUtils/helpers";
+import { getDurationTime } from "../Utils/helpers";
 
 const pathVairants = {
   initial: { pathLength: 0 },
