@@ -13,13 +13,11 @@ function AppLayout() {
     <>
       <Navbar />
       <main className="container mx-auto overflow-clip p-4 lg:px-20">
-        {state === "loading" && pathName?.startsWith("/show") && (
-          <ShowListSkeleton />
-        )}
-        {state === "loading" && pathName?.startsWith("/watch-list") && (
+        {state === "loading" && pathName === "/show" && <ShowListSkeleton />}
+        {state === "loading" && pathName === "/watch-list" && (
           <WatchListSkeleton />
         )}
-        {state === "loading" && pathName?.startsWith("/show-details") && (
+        {state === "loading" && pathName === "/show-details" && (
           <ShowDetailsSkeleton />
         )}
         {state === "idle" && <Outlet />}

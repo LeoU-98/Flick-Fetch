@@ -10,9 +10,9 @@ export default function HydrationFallback() {
     <>
       <Navbar />
       <main className="container mx-auto overflow-clip p-4 lg:px-20">
-        {pathname.startsWith("/show") && <ShowListSkeleton />}
-        {pathname.startsWith("/show-details") && <ShowDetailsSkeleton />}
-        {pathname.startsWith("/watch-list") && <WatchListSkeleton />}
+        {pathname === "/show" && <ShowListSkeleton />}
+        {pathname === "/show-details" && <ShowDetailsSkeleton />}
+        {pathname === "/watch-list" && <WatchListSkeleton />}
       </main>
     </>
   );
