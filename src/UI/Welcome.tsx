@@ -11,7 +11,7 @@ const containerVariants = {
   },
 };
 
-const Welcome: React.FC = () => {
+export default function Welcome() {
   return (
     <motion.div
       variants={containerVariants}
@@ -41,9 +41,7 @@ const Welcome: React.FC = () => {
       </motion.p>
     </motion.div>
   );
-};
-
-export default Welcome;
+}
 
 function WelcomePageSVG() {
   return (
