@@ -28,9 +28,11 @@ export type PersonProps = {
   type: string;
 };
 
-type Data = {
+export type Data = {
   imdbId: string;
   short: {
+    datePublished: string;
+    image: string;
     trailer: {
       thumbnailUrl: string;
       url: string;
@@ -50,4 +52,23 @@ export type TrailerBoxProps = {
 
 export type RatingBoxProps = {
   data: Data;
+  onOpen: () => void;
+  yourRate: number;
 };
+
+export type RateModalProp = {
+  isOpen: boolean;
+  onClose: () => void;
+  onRate: React.Dispatch<React.SetStateAction<number>>;
+  data: Data;
+  yourRate: number;
+};
+
+export type WatchShowProps = {
+  show: Data;
+  onRemove: (id: string) => void;
+};
+
+export interface CustomError extends Error {
+  status: number;
+}

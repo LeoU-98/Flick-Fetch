@@ -12,7 +12,7 @@ const containerVariants = {
   },
 };
 
-const ShowNotFound: React.FC = () => {
+export default function BadRequest() {
   const [searchParams] = useSearchParams();
 
   return (
@@ -21,9 +21,16 @@ const ShowNotFound: React.FC = () => {
       initial="hidden"
       animate="visible"
       transition={{ type: "spring", visualDuration: 1, bounce: 0.3 }}
-      className="flex flex-col items-center justify-center rounded-4xl bg-gradient-to-r from-slate-900/80 to-slate-700/80 py-10 text-center text-white lg:py-40"
+      className={`3xl:py-41 flex flex-col items-center justify-center rounded-4xl bg-gradient-to-r ${searchParams.get("q") === "" ? "lg:py-[9.1rem]" : "lg:py-24"} from-slate-900/80 to-slate-700/80 py-10 text-center text-white`}
     >
-      <NoSearchResultSVG />
+      {searchParams.get("q") === "" ? (
+        <NoSearchResultSVG />
+      ) : (
+        <img
+          src="/badRequest.jpg"
+          className="size-60 overflow-hidden rounded-lg lg:size-70"
+        />
+      )}
       <motion.h1
         className="my-4 text-3xl font-bold sm:text-5xl"
         initial={{ opacity: 0, y: -50 }}
@@ -41,14 +48,12 @@ const ShowNotFound: React.FC = () => {
         transition={{ delay: 0.5, duration: 1 }}
       >
         {searchParams.get("q") === ""
-          ? "The Search Field is Empty , Please Enter a Valid Show Name 😊"
-          : "Sorry , No Shows Found With Such Name 😅 , Try Something else !"}
+          ? "What are you looking for? Type something above to search 😊"
+          : "Oops! Something’s off with your search. Please try again."}
       </motion.p>
     </motion.div>
   );
-};
-
-export default ShowNotFound;
+}
 
 function NoSearchResultSVG() {
   return (

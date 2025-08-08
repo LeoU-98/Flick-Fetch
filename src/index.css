@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 body {
-  background-image: url(./assets/background.jpg);
+  background-image: url(/background.jpg);
 }
 
 .react-player video {
@@ -17,42 +17,7 @@ body {
   --breakpoint-lg: 64rem;
   --breakpoint-xl: 80rem;
   --breakpoint-2xl: 96rem;
-
-  --color-shakespeare-50: #f2f9fd;
-  --color-shakespeare-100: #e4f1fa;
-  --color-shakespeare-200: #c3e4f4;
-  --color-shakespeare-300: #8dceec;
-  --color-shakespeare-400: #51b6df;
-  --color-shakespeare-500: #3ca9d7;
-  --color-shakespeare-600: #1b7eae;
-  --color-shakespeare-700: #17658d;
-  --color-shakespeare-800: #175575;
-  --color-shakespeare-900: #194861;
-  --color-shakespeare-950: #102e41;
-
-  --color-cello-50: #f1f7fe;
-  --color-cello-100: #e3eefb;
-  --color-cello-200: #c0ddf7;
-  --color-cello-300: #88c2f1;
-  --color-cello-400: #49a3e7;
-  --color-cello-500: #2188d6;
-  --color-cello-600: #136bb6;
-  --color-cello-700: #115693;
-  --color-cello-800: #124a7a;
-  --color-cello-900: #13395d;
-  --color-cello-950: #0e2843;
-
-  --color-genoa-50: #f1fcfa;
-  --color-genoa-100: #cef9f0;
-  --color-genoa-200: #9df2e1;
-  --color-genoa-300: #63e5cf;
-  --color-genoa-400: #33ceb9;
-  --color-genoa-500: #1ab2a0;
-  --color-genoa-600: #128f83;
-  --color-genoa-700: #13726a;
-  --color-genoa-800: #145b56;
-  --color-genoa-900: #154c48;
-  --color-genoa-950: #062d2c;
+  --breakpoint-3xl: 100rem;
 }
 
 .glow-on-hover {
@@ -91,14 +56,6 @@ body {
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
   border-radius: 10px;
-}
-
-.glow-on-hover:active {
-  color: #000;
-}
-
-.glow-on-hover:active:after {
-  background: transparent;
 }
 
 .glow-on-hover:hover:before {

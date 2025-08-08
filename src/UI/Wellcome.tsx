@@ -18,11 +18,11 @@ const Welcome: React.FC = () => {
       initial="hidden"
       animate="visible"
       transition={{ type: "spring", visualDuration: 1, bounce: 0.4 }}
-      className="flex flex-col items-center justify-center rounded-4xl bg-gradient-to-r from-slate-900/80 to-slate-700/80 py-10 text-center text-white lg:py-40"
+      className="3xl:py-40 flex flex-col items-center justify-center rounded-4xl bg-gradient-to-r from-slate-900/80 to-slate-700/80 py-10 text-center text-white lg:py-[8.8rem]"
     >
       <WelcomePageSVG />
       <motion.h1
-        className="mb-4 text-4xl font-bold sm:text-5xl"
+        className="mb-4 text-3xl font-bold sm:text-5xl"
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.25 }}

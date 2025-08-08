@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
-import notFound from "../assets/notFound.jpg";
-import { Link } from "react-router";
+import { FaHome } from "react-icons/fa";
 
 const containerVariants = {
   hidden: {
@@ -10,6 +9,15 @@ const containerVariants = {
   visible: {
     x: 0,
     opacity: 1,
+  },
+};
+
+const buttonVairants = {
+  initial: {
+    scale: 1,
+  },
+  animate: {
+    scale: 1.2,
   },
 };
 
@@ -23,16 +31,20 @@ const PageNotFound: React.FC = () => {
       className="flex flex-col items-center justify-center rounded-4xl bg-gradient-to-r from-slate-900/80 to-slate-700/80 px-4 py-10 text-center text-white lg:py-16"
     >
       <img
-        src={notFound}
+        src="/notFound.jpg"
         className="xss:size-80 mb-6 size-70 rounded-4xl lg:size-100"
       />
 
-      <Link
-        to="/"
-        className="rounded-4xl bg-[#1e1a78] px-8 py-4 duration-300 hover:bg-black"
+      <motion.a
+        href="/"
+        variants={buttonVairants}
+        initial="initial"
+        whileHover="animate"
+        className="flex cursor-pointer items-center justify-center gap-2 rounded-full bg-black px-4 py-2 text-base"
       >
-        Go Home Page
-      </Link>
+        <FaHome className="size-8" />
+        Go Home
+      </motion.a>
     </motion.div>
   );
 };

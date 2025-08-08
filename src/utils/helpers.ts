@@ -1,3 +1,19 @@
+export function decodeHtml(html: string) {
+  const txt = document.createElement("textarea");
+  txt.innerHTML = html;
+  return txt.value;
+}
+
+export function formatNumber(number: number): string {
+  if (number >= 1_000_000) {
+    return (number / 1_000_000)?.toFixed(1)?.replace(/\.0$/, "") + "M";
+  } else if (number >= 1_000) {
+    return (number / 1_000)?.toFixed(1)?.replace(/\.0$/, "") + "K";
+  } else {
+    return number?.toString();
+  }
+}
+
 export function getDurationTime(pattern: string, type: string): string {
   const match = pattern?.match(/PT(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?/);
 
@@ -9,7 +25,7 @@ export function getDurationTime(pattern: string, type: string): string {
     if (type === "show")
       return `${hours ? hours + "h" : ""} ${minutes ? minutes + "m" : ""}`;
     else if (type === "trailer")
-      return `${minutes ? minutes + ":" : ""}${seconds ? seconds : ""}`;
+      return `${minutes ? minutes + ":" : "0:"}${seconds ? seconds : "00"}`;
     else {
       return `unknow type`;
     }

@@ -32,7 +32,7 @@ function Show({ show }: ShowProps) {
       className="w-full cursor-pointer rounded-4xl bg-black text-white focus:outline-none"
     >
       <Link
-        to={`/show/show-details/?tt=${show["#IMDB_ID"]}`}
+        to={`/show-details?tt=${show["#IMDB_ID"]}`}
         className="grid size-full min-h-24 grid-cols-[90px_1fr_1fr] items-center gap-5 p-2 px-10 ring-1 ring-transparent focus:ring-white focus:outline-none sm:grid-cols-[90px_auto_90px]"
       >
         {poster ? (

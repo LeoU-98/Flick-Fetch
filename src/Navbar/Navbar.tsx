@@ -1,7 +1,8 @@
 import { useState } from "react";
 import SVG from "./SVG";
-import { Link, useNavigate } from "react-router";
+import { Link, useNavigate, NavLink } from "react-router";
 import { motion } from "motion/react";
+import { FaListAlt } from "react-icons/fa";
 
 function Navbar() {
   const [searchText, setSearchText] = useState("");
@@ -9,7 +10,7 @@ function Navbar() {
   const navigate = useNavigate();
   const handleKeyDown = (event: React.KeyboardEvent) => {
     if (event.key === "Enter") {
-      navigate(`show/?q=${searchText}`);
+      navigate(`show?q=${searchText}`);
     }
   };
 
@@ -41,7 +42,7 @@ function Navbar() {
 
         <Link
           className="xss:h-10 xss:w-20 h-8 w-14 cursor-pointer"
-          to={`show/?q=${searchText}`}
+          to={`show?q=${searchText}`}
         >
           <motion.svg
             initial={{ backgroundColor: "#314158" }}
@@ -76,9 +77,12 @@ function Navbar() {
           </motion.svg>
         </Link>
       </div>
-      <div className="col-start-2 row-start-1 flex items-center justify-end lg:col-start-3">
-        <p className="text-xm">Feature to Be added Later</p>
-      </div>
+      <NavLink
+        to="./watch-list"
+        className="col-start-2 row-start-1 ml-auto flex w-fit cursor-pointer items-center justify-end gap-2 antialiased duration-100 hover:scale-120 lg:col-start-3"
+      >
+        <FaListAlt className="size-8" /> <span>Watch List</span>
+      </NavLink>
     </div>
   );
 }
