@@ -8,7 +8,7 @@ import {
   showDetailsLoader,
   showListLoader,
   watchListLoader,
-} from "./Utils/loaders";
+} from "./tempUtils/loaders";
 import ShowDetails from "./ShowDetails/ShowDetails";
 import WatchList from "./WatchList/WatchList";
 import PageNotFound from "./UI/PageNotFound";

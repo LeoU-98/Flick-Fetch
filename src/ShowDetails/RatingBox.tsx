@@ -1,7 +1,7 @@
 import { FaRegStarHalfStroke, FaStar } from "react-icons/fa6";
 import { RatingBoxProps } from "../Alltypes";
 import { motion } from "motion/react";
-import { formatNumber } from "../Utils/helpers";
+import { formatNumber } from "../tempUtils/helpers";
 import { BiAddToQueue } from "react-icons/bi";
 import { MdOutlinePlaylistRemove } from "react-icons/md";
 import { IoIosPerson } from "react-icons/io";

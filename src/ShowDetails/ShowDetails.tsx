@@ -4,10 +4,10 @@ import GenreTag from "./GenreTag";
 import Person from "./Person";
 import { motion } from "motion/react";
 import { Link, useLoaderData } from "react-router";
-import { decodeHtml, getDurationTime } from "../Utils/helpers";
 import RateModal from "../UI/RateModal";
 import { useEffect, useState } from "react";
 import { LiaImdb } from "react-icons/lia";
+import { decodeHtml, getDurationTime } from "../tempUtils/helpers";
 
 const containerVariants = {
   hidden: {
